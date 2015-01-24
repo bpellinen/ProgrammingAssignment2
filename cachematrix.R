@@ -1,7 +1,8 @@
-## Put comments here that give an overall description of what your
-## functions do
+## These functions demonstrate scoping rules and utility by demonstrating how
+## to cache time-consuming computations, in this case the inverse of a matrix.
 
-## This function creates a special "matrix" object that can cache its inverse. 
+## 'makeCacheMatrix' creates a "matrix" object that will cache the inverse 
+## of the given matrix value
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
@@ -18,10 +19,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## This function computes the inverse of the special "matrix" returned by
-## makeCacheMatrix above. If the inverse has already been calculated
-## (and the matrix has not changed), then the cachesolve should retrieve
-## the inverse from the cache. 
+## 'cacheSolve' computes the inverse of the matrix originally given to the
+## makeCacheMatrix above and caches the result. If called more than once,
+## the function will return the previously computed value. 
 
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
